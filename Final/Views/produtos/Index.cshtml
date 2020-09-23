@@ -1,0 +1,196 @@
+﻿
+@*@model IEnumerable<Final.Models.produto>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Final.Models.produto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*------------------------------------------------------------------------------------------------------------------------*@
+
+<h1>Produtos </h1>
+<br />
+<div class="col-md-7">
+    @using (Html.BeginForm("Index", "Produtos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" />
+        <br />
+        <div class="top-left ">
+       
+            <input type="submit" value="Mande seu Excel " class="btn btn-primary" />
+        </div>
+            }
+
+</div>
+<br />
+<div>
+    <span> @ViewBag.Success </span>
+</div>
+@*-----------------------------------------------------------------------------------------------------------------------*@
+
+@Html.ActionLink("Faça Download para excel ", "Excel")
+
+
+<p>
+    @Html.ActionLink("Criar um novo produto", "Create")
+</p>
+
+
+@using (Html.BeginForm("Index","Produtos",FormMethod.Get))
+{
+    <p>
+        Procurar por nome :@Html.TextBox("SearchString")
+        <input type="submit" value="Busca" />
+    </p>
+}
+<table class="table table-bordered bg-success">
+    <tr>
+        <th>
+            CodProud
+        </th>
+        <th>
+          @Html.ActionLink("DescProduto","Index",new { sortOder = ViewBag.NomeParam }) 
+        </th>
+        <th>
+            IVA
+        </th>
+        <th>
+           ICMS1
+        </th>
+        <th>
+           ICMS2
+        </th>
+        <th>
+            CodICM
+        </th>
+        <th>
+           PercBaSerDST
+        </th>
+        <th>
+            PercBaSerd
+        </th>
+        <th>
+            tipo
+        </th>
+        <th>
+           NCM
+        </th>
+        <th>
+            RegTribEstadual
+        </th>
+        <th>
+          BaseICMS
+        </th>
+        <th>
+            VendaIntCred
+        </th>
+        <th>
+            VendaIntDeb
+        </th>
+        <th>
+            ICMCred
+        </th>
+        <th>
+            ICMDeb
+        </th>
+        <th>
+            MVAind
+        </th>
+        <th>
+            MVAatac
+        </th>
+        <th>
+           MVA4
+        </th>
+        <th>
+           MVA7
+        </th>
+        <th>
+        MVA12
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IVA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ICMS1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ICMS2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodICM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PercBaSerDST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PercBaSerd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NCM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegTribEstadual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseICMS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendaIntCred)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendaIntDeb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ICMCred)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ICMDeb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVAind)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVAatac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVA4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVA7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVA12)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div></div>
+Page @(Model.PageCount< Model.PageNumber ? 0: Model.PageNumber)/@Model.PageCount)
+<div>
+    @Html.PagedListPager(Model,page=> Url.Action("Index",new { page=page}))
+</div>

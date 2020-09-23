@@ -1,0 +1,187 @@
+﻿@model Final.Models.produto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodProud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodProud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescProduto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescProduto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICMS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICMS1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICMS2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICMS2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodICM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodICM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercBaSerDST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercBaSerDST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercBaSerd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercBaSerd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NCM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NCM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegTribEstadual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegTribEstadual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseICMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseICMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendaIntCred)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendaIntCred)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendaIntDeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendaIntDeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICMCred)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICMCred)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICMDeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICMDeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MVAind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVAind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MVAatac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVAatac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MVA4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVA4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MVA7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVA7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MVA12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVA12)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
